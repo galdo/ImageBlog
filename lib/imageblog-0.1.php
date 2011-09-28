@@ -51,6 +51,7 @@ class ImageBlog {
             $blog_entries = file(getcwd() . "/data/blog.index", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             
             $counter = 0;
+            $blogEntries = array();
             foreach ($blog_entries as $blog_entry) {
                 //creates an array of substrings seperated by the delimeter ","
                 $blog_entry = explode(",", $blog_entry);
@@ -61,7 +62,7 @@ class ImageBlog {
                 $entry_file  = trim($blog_entry[3]);
                 
                 $entryArray = array('entry_date' => $entry_date, 'entry_title' => $entry_title, 'entry_tags' => $entry_tags, 'entry_file' => $entry_file);
-                $blogEntries = array($counter = $entryArray);
+                array_push($blogEntries, $entryArray);
                 
                 $counter++;
             }
@@ -98,11 +99,15 @@ class ImageBlog {
      *          | tags  |  date |
      *          -----------------
      *************************************************/
-    public function create_html($blog_entry) {
+    public function create_html($blog_entry, $prev, $next) {
         $retString = "<table class=\"entry\">";
-        $retString = $retString . "<tr><td class=\"entry_title\">".$blog_entry['entry_title']."</td></tr>";
-        $retString = $retString . "<tr><td class= \"entry_image\"><img src=\"".$blog_entry['entry_file']."\"></td></tr>";
-        $retString = $retString . "<tr><td class=\"entry_info\"><span class=\"info\">Tags:</span> ".$blog_entry['entry_tags']."<br><span class=\"info\">Creation Date:</span> ".$blog_entry['entry_date']."</td></tr>";
+        $retString = $retString . "<tr><td colspan=3 class=\"entry_title\">".$blog_entry['entry_title']."</td></tr>";
+        $retString = $retString . "<tr><td colspan=3 class= \"entry_image\"><img src=\"".$blog_entry['entry_file']."\"></td></tr>";
+        $retString = $retString . "<tr><td class=\"entry_info\"><span class=\"info\">Tags:</span> ".$blog_entry['entry_tags']."<br><span class=\"info\">Creation Date:</span> ".$blog_entry['entry_date']."</td>";
+        
+        //adding next and prev button
+        $retString = $retString . "<td class=\"navigation\"><a href=\"index.php?page=".$prev."\">PREV</a></td><td class=\"navigation\"><a href=\"index.php?page=".$next."\">NEXT</a></td></tr>";
+        
         $retString = $retString . "</table>";
         
         return $retString;

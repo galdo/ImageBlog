@@ -10,8 +10,8 @@ table.entry
     margin-right: auto;
     border-spacing:0px;
     border-collapse:separate;
-	border-width: 1px;
-	border-spacing: 2px;
+	border-width: 0px;
+	border-spacing: 10px;
 	border-style: solid;
 	border-color: gray;
 	width: 800px;
@@ -26,6 +26,7 @@ td.entry_title
     background-color: white;
     font-size: 20px;
     padding: 0px 10px 0px 33px;
+    height: 40px;
     color: #909090;
 }
 
@@ -43,13 +44,38 @@ td.entry_image
 td.entry_info
 {
     border-width: 3px;
+    height:40px;
     border-style: solid;
     border-color: grey;
     background-color:white;
     font-size: 14px;
     text-align:left;
-    width: 100px;
+    width: 500px;
     padding: 0px 10px;
+    color:#909090;
+}
+
+td.navigation
+{
+    border-width: 3px;
+    border-style: solid;
+    border-color: grey;
+    background-color:white;
+    font-size: 14px;
+    text-align:center;
+    font-weight:bold;
+    color:#909090;
+}
+
+td.navigation a 
+{
+    color: #909090;
+    text-decoration:none;
+}
+
+td.navigation a:hover
+{
+    color: #505050;
 }
 
 span.info
@@ -57,3 +83,12 @@ span.info
     font-weight: bold;
     padding: 0px 0px 0px 33px;
 }
+
+div.footer
+{
+    padding: 100px;
+    font-size: 10px;
+    color: #909090;
+    text-align:center;
+}
+
