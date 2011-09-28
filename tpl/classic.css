@@ -1,0 +1,59 @@
+body
+{ 
+    font-family:"Verdana", Times, serif;
+    background-color: #E8E8E8;
+} 
+
+table.entry
+{
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing:0px;
+    border-collapse:separate;
+	border-width: 1px;
+	border-spacing: 2px;
+	border-style: solid;
+	border-color: gray;
+	width: 800px;
+}
+
+td.entry_title
+{
+    border-width: 3px;
+    border-spacing: 5px;
+    border-color: gray;
+    border-style: solid;
+    background-color: white;
+    font-size: 20px;
+    padding: 0px 10px 0px 33px;
+    color: #909090;
+}
+
+td.entry_image
+{
+    padding: 33px;
+    border-width: 3px;
+    border-spacing: 5px;
+    border-style: solid;
+    border-color: grey;
+    background-color: white;
+    width: 800px;
+}
+
+td.entry_info
+{
+    border-width: 3px;
+    border-style: solid;
+    border-color: grey;
+    background-color:white;
+    font-size: 14px;
+    text-align:left;
+    width: 100px;
+    padding: 0px 10px;
+}
+
+span.info
+{
+    font-weight: bold;
+    padding: 0px 0px 0px 33px;
+}

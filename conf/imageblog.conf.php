@@ -1,9 +1,13 @@
 <?php
 
 $imageblog = array(
-    'title'  => "Galdo's Blog",
-    'path'   => 'Y/m/d',
-    'size'   => '718'
+    'title'      => "Galdo's Blog",
+    'template'   => 'classic'
+);
+
+$classic = array(
+    'image_size' => '718',
+    'stylesheet' => 'classic.css'
 );
 
 
