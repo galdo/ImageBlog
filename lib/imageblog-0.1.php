@@ -91,8 +91,7 @@ class ImageBlog {
      *          the blog entry with date[0], title[1],
      *          tags[2], filename[3]
      *************************************************/
-    public function write_post($cwd, $blog_entry) {
-        
+    public function write_post($cwd, $blog_entry, $image_size) {
         if ($this->check_installed($cwd) == true) {
             
             // (1) get existing blog entries
@@ -102,7 +101,23 @@ class ImageBlog {
             $existingBlogEntries = array_reverse($existingBlogEntries);
             array_push($existingBlogEntries, $blog_entry);
             
-            // (3) store to database
+            // (3) resize image data
+            $imageInfo = getimagesize($blog_entry['entry_file']);
+
+            if ($imageInfo[0] > $image_size) {
+                //resize needed --> otherwise smaller or equal
+                $img_width = $image_size;
+                $img_height = ($imageInfo[1] * ($image_size / $imageInfo[0]));
+
+                //creating new image                
+                $image = imagecreatetruecolor($img_width, $img_height);
+                imagecopyresized($image, imagecreatefromjpeg($blog_entry['entry_file']), 0, 0, 0, 0, $img_width, $img_height, $imageInfo[0], $imageInfo[1]);
+                imagejpeg($image, $blog_entry['entry_file']);
+                
+                //TODO: add code here to create a thumbnail for overview page
+            }
+            
+            // (4) store to database
             $dbHandle = fopen($cwd . "/data/blog.index",'w');
             
             foreach($existingBlogEntries as $entry) {

@@ -1,6 +1,5 @@
 <?php
 
-
 /****************************************************
  * INFO: set global settings
  ****************************************************/
@@ -42,7 +41,7 @@ if ((file_exists($cwd. "/lib/imageblog-0.1.php")) && (file_exists($cwd . "/conf/
     $entryList = $ImageBlogInstance->read_post($cwd); 
     
     /**** EXAMPLE HOW TO WRITE A POST ****/
-    //$ImageBlogInstance->write_post($cwd, array('entry_date' => "today", 'entry_title' => "write test", 'entry_tags' => "", 'entry_file' => "test.jpg"));
+    //$ImageBlogInstance->write_post($cwd, array('entry_date' => "today", 'entry_title' => "write test", 'entry_tags' => "", 'entry_file' => "data/test.jpg"), 400);
     
 } else {
     print_r("Error running ImageBlog.\n");
