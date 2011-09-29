@@ -1,15 +1,12 @@
 <?php
 
 $imageblog = array(
-    'title'      => "Galdo's Blog",
-    'template'   => 'classic'
+    'title'       => "Galdo's Blog",
+    'data_path'   => "data",
+    'date_format' => "Y-m-d",
+    'template'    => "classic",
+    
+    //not to edit
 );
-
-$classic = array(
-    'image_size' => '718',
-    'stylesheet' => 'classic.css'
-);
-
-
 
 ?>
