@@ -65,10 +65,15 @@ print("<head><title>".$imageblog['title']."</title>\n<link rel=\"stylesheet\" ty
 
 /**** CONTENT (SITE VISE) ****/
 //TODO: Extend template to deal with more entries per page
-if ($page == sizeof($entryList) - 1) $prev = false; else $prev = $page + 1;
-if ($page == 0) $next = false; else $next = $page - 1;
-print $ImageBlogInstance->create_html($entryList[$page], $prev, $next);
-
+if (sizeof($entryList) > 0) {
+    if ($page > sizeof($entryList) - 1) $page = 0;
+    if ($page == sizeof($entryList) - 1) $prev = -1; else $prev = $page + 1;
+    if ($page == 0) $next = -1; else $next = $page - 1;
+    
+    print $ImageBlogInstance->create_html($entryList[$page], $prev, $next);
+} else {
+    print("<br><br><br><div class=\"banner\">Open the Admin Interface to start a new ImageBlog</div>");
+}
 
 /**** FOOTER ****/
 print("\n<div class=\"footer\">Powered by ImageBlog</div>\n");

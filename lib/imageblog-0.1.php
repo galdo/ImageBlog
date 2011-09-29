@@ -78,6 +78,7 @@ class ImageBlog {
         } else {
             //install imageblog correctly
             $this->install_imageblog($cwd);
+            return false;
         }
     }
     
@@ -157,21 +158,19 @@ class ImageBlog {
      *************************************************/
     public function create_html($blog_entry, $prev, $next) {
     
-        //check type of $prev
-        if ($prev == false) $prev = $next + 1;
-        
-        //check type of $next            
-        if ($next == false) $next = 0;
-    
         $retString = "<table class=\"entry\">\n";
         $retString = $retString . "<tr><td colspan=3 class=\"entry_title\">".$blog_entry['entry_title']."</td></tr>\n";
         $retString = $retString . "<tr><td colspan=3 class= \"entry_image\"><img src=\"".$blog_entry['entry_file']."\"></td></tr>\n";
         $retString = $retString . "<tr><td class=\"entry_info\"><span class=\"info\">Tags:</span> ".$blog_entry['entry_tags']."<br><span class=\"info\">Creation Date:</span> ".$blog_entry['entry_date']."</td>\n";
         
         //adding next and prev button
-        $retString = $retString . "<td class=\"navigation\"><a href=\"index.php?page=".$prev."\">previous</a></td><td class=\"navigation\"><a href=\"index.php?page=".$next."\">next</a></td></tr>\n";
+        $retString = $retString . "<td class=\"navigation\">";
+        if ($prev == -1) $retString = $retString."previous</td>"; else $retString = $retString. "<a href=\"index.php?page=".$prev."\">previous</a></td>";
+       
+        $retString = $retString . "<td class=\"navigation\">";
+        if ($next == -1) $retString = $retString."next</td>"; else $retString = $retString. "<a href=\"index.php?page=".$next."\">next</a></td>";
         
-        $retString = $retString . "</table>\n\n";
+        $retString = $retString . "</tr>\n</table>\n\n";
         
         return $retString;
     }
