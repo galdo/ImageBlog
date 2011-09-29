@@ -6,9 +6,9 @@ Installation is very easy. Just extract the archive into your PHP based web serv
 
 ## Configuration
 You have to set only four parameters to configure ImageBlog:
-- the title of your blog `$imageblog['title']`
-- the data path of your blog `$imageblog['data_path']`
-- the date format of your blog `$imageblog['date_format']`
-- the template (located within the tpl directory) `$imageblog['template']`
+-  the title of your blog `$imageblog['title']`
+-  the data path of your blog `$imageblog['data_path']`
+-  the date format of your blog `$imageblog['date_format']`
+-  the template (located within the tpl directory) `$imageblog['template']`
 
 ## Manual
