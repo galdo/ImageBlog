@@ -15,7 +15,7 @@ print("<html><head><title>ImageBlog Admin Interface</title>\n");
 
 /**** CONTENT ****/ 
 
-if (sizeof($_FILES['entry_file']['error']) > 0) {
+if ($_FILES['entry_file']['error'] == 0) {
     //create redirection
     print("<meta http-equiv=\"refresh\" content=\"5;url=index.php\"></head><body>");
 
@@ -31,6 +31,14 @@ if (sizeof($_FILES['entry_file']['error']) > 0) {
     //create blog entry
     $ImageBlogInstance = new ImageBlog();
     $ImageBlogInstance->write_post($cwd, array('entry_date' => $entry_date, 'entry_title' => $entry_title, 'entry_tags' => $entry_tags, 'entry_file' => $entry_file), $template['image_size']);
+
+    //reset data
+    $entry_date  = "";
+    $entry_title = "";
+    $entry_tags  = "";
+    $entry_file  = "";
+
+    reset($_FILES['entry_file']);
 
     print ("The entry ".$entry_title." successfully created.<br>You will be redirected in 5s...");
 } else {
