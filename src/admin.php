@@ -11,11 +11,11 @@ $template = $GLOBALS[$imageblog['template']];
 
 /**** HEADER ****/ 
 print("<html><head><title>ImageBlog Admin Interface</title>\n");
-
+print_r($_FILES['entry_file']);
 
 /**** CONTENT ****/ 
 
-if ($_FILES['entry_file']['error'] == 0) {
+if (($_FILES['entry_file']['error'] == 0) && (count($_FILES['entry_file']) > 0)){
     //create redirection
     print("<meta http-equiv=\"refresh\" content=\"5;url=index.php\"></head><body>");
 
@@ -38,7 +38,7 @@ if ($_FILES['entry_file']['error'] == 0) {
     $entry_tags  = "";
     $entry_file  = "";
 
-    reset($_FILES['entry_file']);
+    $_FILES['entry_file'] = array();
 
     print ("The entry ".$entry_title." successfully created.<br>You will be redirected in 5s...");
 } else {
