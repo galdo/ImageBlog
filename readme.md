@@ -12,8 +12,8 @@ ImageBlog itself consists of three files:
 
 Additionally there are more files to install concerning the template:
 
-+ tpl/classic.conf.php
-+ tpl/classic.css
++ the template configuration `tpl/classic.conf.php`
++ the template itself defined in `tpl/classic.css`
 
 ## Configuration
 You have to set only four parameters to configure ImageBlog:
