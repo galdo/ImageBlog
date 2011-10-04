@@ -13,9 +13,9 @@ $cwd = getcwd();        //< get current working directory
  *
  *       also settings and templates are loaded 
  ****************************************************/
-if ((file_exists($cwd. "/lib/imageblog-0.1.php")) && (file_exists($cwd . "/conf/imageblog.conf.php"))) {
-    require_once ($cwd . "/lib/imageblog-0.1.php");
-    require_once ($cwd . "/conf/imageblog.conf.php");
+if ((file_exists($cwd. "/../lib/imageblog-0.1.php")) && (file_exists($cwd . "/conf/imageblog.conf.php"))) {
+    require_once ($cwd . "/../lib/imageblog-0.1.php");
+    require_once ($cwd . "/../conf/imageblog.conf.php");
     
     //read template
     require_once($cwd . "/tpl/" . $imageblog['template'] . ".conf.php");
