@@ -10,6 +10,11 @@ ImageBlog itself consists of three files:
 + the admin file which is your place to create new entries `admin.php`
 + the ImageBlog Library `lib/imageblog-0.1.php`
 
+Additionally there are more files to install concerning the template:
+
++ tpl/classic.conf.php
++ tpl/classic.css
+
 ## Configuration
 You have to set only four parameters to configure ImageBlog:
 
