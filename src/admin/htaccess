@@ -1,0 +1,4 @@
+AuthUserFile /path/to/admin_area/.htpasswd
+AuthName "ImageBlog Admin Area"
+AuthType Basic
+require valid-user
