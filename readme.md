@@ -22,6 +22,7 @@ If you want to customize the default theme *classic* which is basically installe
 
 ## APIs
 ImageBlog supports remote posting of entries with HTTP POST requests. The request has to be sent to admin.php installed on your website. Fill the following data:
+
 + entry_title
 + entry_tags
 + entry_file
@@ -32,6 +33,7 @@ Your ImageBlog installation runs well when the index site is loaded successfully
 If you want to add an new blog entry to your ImageBlog installation just surf to the admin.php site (which is currently not secured), fill all the boxes and after a press on the "submit" button - you have created a new entry.
 
 ## Features to come
+
 + EXIF data handling presented in an image overlay
 + HTML configurable header and top level menu
 + RSS / ATOM feeds
