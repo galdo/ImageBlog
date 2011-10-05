@@ -1,6 +1,7 @@
 # ImageBlog Manual and Setup Guide
 This is the ImageBlog Manual and Setup Guide. This file contains usefull information about installing, configuring and using ImageBlog.
-A demo of an ImageBlog installation can be found on http://www.galdo.de/imageblog/
+
+A demo of an ImageBlog installation can be found on http://www.galdo.de/imageblog/.
 
 ## Installation
 Installation is very easy. Just extract the archive into your PHP based web server - that's it. The ImageBlog archive contains all you need for starting your new and super fast photo blogging website. If anything fails during runtime - ImageBlog repairs itself using its internal configurationless routines.
