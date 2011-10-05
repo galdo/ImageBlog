@@ -15,6 +15,11 @@ Additionally there are more files to install concerning the template:
 + the template configuration `tpl/classic.conf.php`
 + the template itself defined in `tpl/classic.css`
 
+If you want to use a secure admin area edit the htaccess and htpasswd files to your needs and rename them:
+
++ htaccess -> .htaccess
++ htpasswd -> .htpasswd
+
 ## Configuration
 You have to set only four parameters to configure ImageBlog:
 
