@@ -1,10 +1,10 @@
 <?php
 
 $cwd = getcwd();
-require_once ($cwd . "../conf/imageblog.conf.php");
-require_once ($cwd . "../tpl/".$imageblog['template'].".conf.php");
+require_once ($cwd . "/../conf/imageblog.conf.php");
+require_once ($cwd . "/../tpl/".$imageblog['template'].".conf.php");
 
-require_once ($cwd . "../lib/imageblog-0.1.php");
+require_once ($cwd . "/../lib/imageblog-0.1.php");
 
 //get template settings for picture transformation
 $template = $GLOBALS[$imageblog['template']];
@@ -26,11 +26,11 @@ if (($_FILES['entry_file']['error'] == 0) && (count($_FILES['entry_file']) > 0))
     $entry_file  = $imageblog['data_path']."/".$_FILES['entry_file']['name'];
     
     //copy the file to the data dircetory
-    move_uploaded_file($_FILES["entry_file"]["tmp_name"], $cwd."/".$entry_file);
+    move_uploaded_file($_FILES["entry_file"]["tmp_name"], $cwd."/../".$entry_file);
     
     //create blog entry
     $ImageBlogInstance = new ImageBlog();
-    $ImageBlogInstance->write_post($cwd, array('entry_date' => $entry_date, 'entry_title' => $entry_title, 'entry_tags' => $entry_tags, 'entry_file' => $entry_file), $template['image_size']);
+    $ImageBlogInstance->write_post($cwd."/..", array('entry_date' => $entry_date, 'entry_title' => $entry_title, 'entry_tags' => $entry_tags, 'entry_file' => $entry_file), $template['image_size']);
 
     //reset data
     $entry_date  = "";

@@ -103,7 +103,7 @@ class ImageBlog {
             array_push($existingBlogEntries, $blog_entry);
             
             // (3) resize image data
-            $imageInfo = getimagesize($blog_entry['entry_file']);
+            $imageInfo = getimagesize($cwd."/".$blog_entry['entry_file']);
 
             if ($imageInfo[0] > $image_size) {
                 //resize needed --> otherwise smaller or equal
@@ -112,8 +112,8 @@ class ImageBlog {
 
                 //creating new image                
                 $image = imagecreatetruecolor($img_width, $img_height);
-                imagecopyresized($image, imagecreatefromjpeg($blog_entry['entry_file']), 0, 0, 0, 0, $img_width, $img_height, $imageInfo[0], $imageInfo[1]);
-                imagejpeg($image, $blog_entry['entry_file'], 100);
+                imagecopyresized($image, imagecreatefromjpeg($cwd."/".$blog_entry['entry_file']), 0, 0, 0, 0, $img_width, $img_height, $imageInfo[0], $imageInfo[1]);
+                imagejpeg($image, $cwd."/".$blog_entry['entry_file'], 100);
                 
                 //TODO: add code here to create a thumbnail for overview page
             }
