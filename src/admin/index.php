@@ -17,7 +17,7 @@ print_r($_FILES['entry_file']);
 
 if (($_FILES['entry_file']['error'] == 0) && (count($_FILES['entry_file']) > 0)){
     //create redirection
-    print("<meta http-equiv=\"refresh\" content=\"5;url=index.php\"></head><body>");
+    print("<meta http-equiv=\"refresh\" content=\"5;url=../index.php\"></head><body>");
 
     //file already uploaded --> create the blog entry
     $entry_date  = date($imageblog['date_format']);
@@ -42,7 +42,7 @@ if (($_FILES['entry_file']['error'] == 0) && (count($_FILES['entry_file']) > 0))
 
     print ("The entry ".$entry_title." successfully created.<br>You will be redirected in 5s...");
 } else {
-    print("</head><body><form  enctype=\"multipart/form-data\" action=\"admin.php\" method=\"post\" target=\"_self\">\n
+    print("</head><body><form  enctype=\"multipart/form-data\" action=\"index.php\" method=\"post\" target=\"_self\">\n
     <table>
     <!-- hier folgen die Formularelemente -->
     <tr><td>Title:</td><td><input type=\"text\" name=\"entry_title\" /></td></tr>
