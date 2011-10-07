@@ -1,6 +1,8 @@
 # ImageBlog Manual and Setup Guide
 This is the ImageBlog Manual and Setup Guide. This file contains usefull information about installing, configuring and using ImageBlog.
 
+A demo of an ImageBlog installation can be found on http://www.galdo.de/imageblog/.
+
 ## Installation
 Installation is very easy. Just extract the archive into your PHP based web server - that's it. The ImageBlog archive contains all you need for starting your new and super fast photo blogging website. If anything fails during runtime - ImageBlog repairs itself using its internal configurationless routines.
 
@@ -14,6 +16,11 @@ Additionally there are more files to install concerning the template:
 
 + the template configuration `tpl/classic.conf.php`
 + the template itself defined in `tpl/classic.css`
+
+If you want to use a secure admin area edit the htaccess and htpasswd files to your needs and rename them:
+
++ htaccess -> .htaccess
++ htpasswd -> .htpasswd
 
 ## Configuration
 You have to set only four parameters to configure ImageBlog:
